@@ -8,6 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import AddCoffee from './components/AddCoffee/AddCoffee.jsx';
+import UpdateCoffee from './components/UpdateCoffee/UpdateCoffee.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,12 +19,17 @@ const router = createBrowserRouter([
   {
     path: 'addCoffee',
     element: <AddCoffee></AddCoffee>
+  },
+  {
+    path: 'updateCoffee/:id',
+    element: <UpdateCoffee></UpdateCoffee>,
+    loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
   }
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <div className='max-w-6xl mx-auto p-4'>
+    <div className='max-w-6xl mx-auto my-12'>
       <RouterProvider router={router} />
     </div>
   </StrictMode>,
