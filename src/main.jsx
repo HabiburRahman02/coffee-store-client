@@ -13,6 +13,7 @@ import CoffeeDetails from './components/CoffeeDetails/CoffeeDetails.jsx';
 import SignIn from './components/AddCoffee/Signin/SignIn.jsx';
 import SignUp from './components/SignUp/SignUp.jsx';
 import AuthProvider from './Provider/AuthProvider/AuthProvider.jsx';
+import Users from './components/Users/Users.jsx';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <SignUp></SignUp>,
+  },
+  {
+    path: '/users',
+    element: <Users></Users>,
+    loader: () => fetch('http://localhost:5000/user')
   }
 ]);
 

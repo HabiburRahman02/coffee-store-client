@@ -19,7 +19,9 @@ const SignUp = () => {
                 console.log(result.user)
 
                 // store created user in the database
-                const user = { email }
+                const createdAt = result.user?.metadata?.creationTime
+                const refreshNumber = result.user?.proactiveRefresh?.errorBackoff
+                const user = { email, createdAt, refreshNumber }
                 fetch('http://localhost:5000/user', {
                     method: 'POST',
                     headers: {
