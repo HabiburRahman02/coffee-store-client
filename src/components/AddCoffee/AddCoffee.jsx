@@ -14,7 +14,7 @@ const AddCoffee = () => {
         const photoUrl = form.photoUrl.value;
         const newCoffee = { coffeeName, quantity, supplierName, category, details, taste, photoUrl }
 
-        fetch('http://localhost:5000/coffee', {
+        fetch('https://coffee-store-server-delta-lemon.vercel.app/coffee', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
