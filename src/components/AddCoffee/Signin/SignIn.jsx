@@ -20,7 +20,7 @@ const SignIn = () => {
                     lastSignInTime: result.user?.metadata?.lastSignInTime
                 }
                 // update user in last sign in time
-                fetch('https://coffee-store-server-delta-lemon.vercel.app/user', {
+                fetch('http://localhost:5000.app/user', {
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json'

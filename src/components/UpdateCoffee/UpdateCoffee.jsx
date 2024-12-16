@@ -16,7 +16,7 @@ const UpdateCoffee = () => {
         const photoUrl = form.photoUrl.value;
         const updatedCoffee = { coffeeName, quantity, supplierName, category, details, taste, photoUrl }
 
-        fetch(`https://coffee-store-server-delta-lemon.vercel.app/coffee/${_id}`, {
+        fetch(`http://localhost:5000.app/coffee/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

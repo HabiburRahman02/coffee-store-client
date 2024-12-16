@@ -11,10 +11,10 @@ const AddCoffee = () => {
         const category = form.category.value;
         const details = form.details.value;
         const taste = form.taste.value;
-        const photoUrl = form.photoUrl.value;
+        const photoUrl = form.phgitotoUrl.value;
         const newCoffee = { coffeeName, quantity, supplierName, category, details, taste, photoUrl }
 
-        fetch('https://coffee-store-server-delta-lemon.vercel.app/coffee', {
+        fetch('http://localhost:5000.app/coffee', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

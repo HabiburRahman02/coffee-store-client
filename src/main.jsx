@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
+// import App from './App.jsx'
 import './index.css'
 
 import {
@@ -14,12 +14,14 @@ import SignIn from './components/AddCoffee/Signin/SignIn.jsx';
 import SignUp from './components/SignUp/SignUp.jsx';
 import AuthProvider from './Provider/AuthProvider/AuthProvider.jsx';
 import Users from './components/Users/Users.jsx';
+import Features from './components/Features/Features.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
-    loader: () => fetch('https://coffee-store-server-delta-lemon.vercel.app/coffee')
+    // element: <App></App>,
+    // loader: () => fetch('http://localhost:5000.app/coffee')
+    element: <p>Home page</p>,
   },
   {
     path: 'addCoffee',
@@ -28,12 +30,12 @@ const router = createBrowserRouter([
   {
     path: 'updateCoffee/:id',
     element: <UpdateCoffee></UpdateCoffee>,
-    loader: ({ params }) => fetch(`https://coffee-store-server-delta-lemon.vercel.app/coffee/${params.id}`)
+    loader: ({ params }) => fetch(`http://localhost:5000.app/coffee/${params.id}`)
   },
   {
     path: 'coffeeDetails/:id',
     element: <CoffeeDetails></CoffeeDetails>,
-    loader: ({ params }) => fetch(`https://coffee-store-server-delta-lemon.vercel.app/coffee/${params.id}`)
+    loader: ({ params }) => fetch(`http://localhost:5000.app/coffee/${params.id}`)
   },
   {
     path: '/signin',
@@ -46,7 +48,11 @@ const router = createBrowserRouter([
   {
     path: '/users',
     element: <Users></Users>,
-    loader: () => fetch('https://coffee-store-server-delta-lemon.vercel.app/user')
+    loader: () => fetch('http://localhost:5000.app/user')
+  },
+  {
+    path: '/features',
+    element: <Features></Features>
   }
 ]);
 

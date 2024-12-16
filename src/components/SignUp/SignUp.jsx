@@ -22,7 +22,7 @@ const SignUp = () => {
                 const createdAt = result.user?.metadata?.creationTime
                 const refreshNumber = result.user?.proactiveRefresh?.errorBackoff
                 const user = { email, createdAt, refreshNumber }
-                fetch('https://coffee-store-server-delta-lemon.vercel.app/user', {
+                fetch('http://localhost:5000.app/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
